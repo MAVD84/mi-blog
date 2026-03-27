@@ -43,7 +43,7 @@ PostSchema.pre('save', function (next) {
   next()
 })
 
-PostSchema.index({ slug: 1 })
+// slug no va aquí — ya tiene unique:true arriba
 PostSchema.index({ published: 1, publishedAt: -1 })
 PostSchema.index({ categories: 1 })
 
