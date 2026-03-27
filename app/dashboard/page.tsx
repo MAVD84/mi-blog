@@ -2,7 +2,7 @@ import { connectDB } from '@/lib/mongodb'
 import { Post } from '@/lib/models/Post'
 import Link from 'next/link'
 import { getServerSession } from 'next-auth'
-import { authOptions } from '@/app/api/auth/[...nextauth]/route'
+import { authOptions } from '@/lib/auth'
 
 export default async function DashboardPage() {
   const session = await getServerSession(authOptions)
