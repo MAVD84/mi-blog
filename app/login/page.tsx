@@ -31,7 +31,7 @@ export default function LoginPage() {
     <div className="min-h-screen bg-cream-50 flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
         <div className="mb-10 text-center">
-          <h1 className="font-display text-4xl text-ink-900 mb-2">Mi Blog</h1>
+          <h1 className="font-display text-4xl text-ink-900 mb-2">Blog.</h1>
           <p className="font-body text-sm text-ink-500">Acceso de autores</p>
         </div>
 

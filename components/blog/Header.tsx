@@ -13,7 +13,7 @@ export function Header() {
 
         {/* Logo */}
         <Link href="/" className="font-display text-2xl text-ink-900 tracking-tight hover:text-accent transition-colors">
-          Mi Blog
+          Blog.
         </Link>
 
         {/* Nav desktop */}

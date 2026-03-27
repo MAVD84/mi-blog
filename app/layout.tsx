@@ -23,7 +23,7 @@ const jetbrains = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: { default: 'Mi Blog', template: '%s | Mi Blog' },
+  title: { default: 'Blog.', template: '%s | Blog.' },
   description: 'Un blog personal',
 }
 

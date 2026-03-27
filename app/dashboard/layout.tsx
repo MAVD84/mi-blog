@@ -13,7 +13,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
       <header className="bg-ink-900 text-cream-50 px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-8">
           <Link href="/" className="font-display text-xl text-cream-50 hover:text-cream-200 transition-colors">
-            Mi Blog
+            Blog.
           </Link>
           <nav className="hidden md:flex gap-6">
             <Link href="/dashboard" className="font-body text-sm text-ink-200 hover:text-cream-50 tracking-wide transition-colors">

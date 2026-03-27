@@ -1,4 +1,4 @@
-# Mi Blog
+# Blog.
 
 Blog personal construido con **Next.js 14**, **Tailwind CSS** y **MongoDB**.
 
