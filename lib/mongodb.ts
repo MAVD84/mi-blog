@@ -29,5 +29,12 @@ export async function connectDB() {
   }
 
   cached.conn = await cached.promise
+
+  // Registrar todos los modelos automáticamente
+  await import('@/lib/models/User')
+  await import('@/lib/models/Category')
+  await import('@/lib/models/Post')
+  await import('@/lib/models/Comment')
+
   return cached.conn
 }
