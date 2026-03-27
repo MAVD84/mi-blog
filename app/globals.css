@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Source Serif 4', serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background-color: #c0392b;
+    color: #fdfbf7;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #f9f4ec; }
+  ::-webkit-scrollbar-thumb { background: #b8987a; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #7c5c3e; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-ink-800 text-cream-50 px-6 py-2.5 font-body text-sm tracking-wide
+           hover:bg-accent transition-colors duration-200 cursor-pointer;
+  }
+
+  .btn-secondary {
+    @apply border border-ink-300 text-ink-700 px-6 py-2.5 font-body text-sm tracking-wide
+           hover:border-ink-700 hover:text-ink-900 transition-colors duration-200 cursor-pointer;
+  }
+
+  .btn-ghost {
+    @apply text-ink-600 px-4 py-2 font-body text-sm hover:text-ink-900 transition-colors duration-200 cursor-pointer;
+  }
+
+  .tag {
+    @apply inline-block px-3 py-0.5 text-xs font-body tracking-wider uppercase
+           border border-ink-200 text-ink-600 hover:border-ink-500 hover:text-ink-800
+           transition-colors duration-150 cursor-pointer;
+  }
+
+  .input {
+    @apply w-full border border-ink-200 bg-white px-4 py-2.5 font-body text-sm text-ink-800
+           placeholder:text-ink-400 focus:outline-none focus:border-ink-500
+           transition-colors duration-200;
+  }
+
+  .label {
+    @apply block text-xs font-body tracking-widest uppercase text-ink-500 mb-1.5;
+  }
+
+  /* Decorative rule */
+  .rule {
+    @apply border-t border-ink-200 my-8;
+  }
+
+  .rule-accent {
+    @apply border-t-2 border-accent my-8;
+  }
+}
+
+/* Fade-in animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.5s ease-out forwards;
+}
+
+.animate-fade-up-delay-1 { animation: fadeUp 0.5s ease-out 0.1s forwards; opacity: 0; }
+.animate-fade-up-delay-2 { animation: fadeUp 0.5s ease-out 0.2s forwards; opacity: 0; }
+.animate-fade-up-delay-3 { animation: fadeUp 0.5s ease-out 0.3s forwards; opacity: 0; }
