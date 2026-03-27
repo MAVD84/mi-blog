@@ -3,6 +3,8 @@ import { Category } from '@/lib/models/Category'
 import { PostEditor } from '@/components/admin/PostEditor'
 import Link from 'next/link'
 
+export const dynamic = 'force-dynamic'
+
 export default async function NewPostPage() {
   await connectDB()
   const categories = await Category.find().sort({ name: 1 }).lean()

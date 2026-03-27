@@ -1,9 +1,13 @@
 import { notFound } from 'next/navigation'
 import { connectDB } from '@/lib/mongodb'
 import { Post } from '@/lib/models/Post'
+import { Category } from '@/lib/models/Category'
+import { User } from '@/lib/models/User'
 import { Comment } from '@/lib/models/Comment'
 import { CommentForm } from '@/components/blog/CommentForm'
 import Link from 'next/link'
+
+export const dynamic = 'force-dynamic'
 
 interface Props { params: { slug: string } }
 
@@ -32,7 +36,6 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <article className="animate-fade-up">
-      {/* Categories */}
       {p.categories.length > 0 && (
         <div className="flex gap-2 flex-wrap mb-4">
           {p.categories.map((cat: any) => (
@@ -41,12 +44,10 @@ export default async function PostPage({ params }: Props) {
         </div>
       )}
 
-      {/* Title */}
       <h1 className="font-display text-4xl md:text-5xl text-ink-900 leading-tight mb-4">
         {p.title}
       </h1>
 
-      {/* Meta */}
       <div className="flex items-center gap-4 text-xs text-ink-400 font-body tracking-wide mb-8">
         <span>{p.author?.name}</span>
         <span className="text-ink-200">·</span>
@@ -65,14 +66,12 @@ export default async function PostPage({ params }: Props) {
 
       <div className="rule" />
 
-      {/* Cover image */}
       {p.coverImage && (
         <div className="mb-8 overflow-hidden">
           <img src={p.coverImage} alt={p.title} className="w-full object-cover max-h-96" />
         </div>
       )}
 
-      {/* Content */}
       <div
         className="prose prose-ink max-w-none font-body"
         dangerouslySetInnerHTML={{ __html: p.content }}
@@ -80,7 +79,6 @@ export default async function PostPage({ params }: Props) {
 
       <div className="rule mt-12" />
 
-      {/* Author bio */}
       {p.author?.bio && (
         <div className="bg-cream-100 border border-ink-100 px-6 py-5 mb-8">
           <p className="font-body text-xs tracking-widest uppercase text-ink-400 mb-1">Autor</p>
@@ -89,7 +87,6 @@ export default async function PostPage({ params }: Props) {
         </div>
       )}
 
-      {/* Comments */}
       <section className="mt-12">
         <h2 className="font-display text-2xl text-ink-900 mb-6">
           Comentarios <span className="text-ink-300 font-body text-lg">({comments.length})</span>

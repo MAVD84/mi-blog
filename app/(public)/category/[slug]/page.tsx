@@ -4,6 +4,8 @@ import { Category } from '@/lib/models/Category'
 import { Post } from '@/lib/models/Post'
 import { PostCard } from '@/components/blog/PostCard'
 
+export const dynamic = 'force-dynamic'
+
 interface Props { params: { slug: string } }
 
 export default async function CategoryPage({ params }: Props) {

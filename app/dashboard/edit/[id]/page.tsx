@@ -5,6 +5,8 @@ import { Category } from '@/lib/models/Category'
 import { PostEditor } from '@/components/admin/PostEditor'
 import Link from 'next/link'
 
+export const dynamic = 'force-dynamic'
+
 interface Props { params: { id: string } }
 
 export default async function EditPostPage({ params }: Props) {

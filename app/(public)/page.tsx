@@ -1,9 +1,10 @@
 import { connectDB } from '@/lib/mongodb'
 import { Post } from '@/lib/models/Post'
 import { Category } from '@/lib/models/Category'
+import { User } from '@/lib/models/User'
 import { PostCard } from '@/components/blog/PostCard'
 
-export const revalidate = 60
+export const dynamic = 'force-dynamic'
 
 export default async function HomePage() {
   await connectDB()
@@ -17,7 +18,6 @@ export default async function HomePage() {
 
   return (
     <div>
-      {/* Hero */}
       <div className="mb-16 animate-fade-up">
         <p className="font-body text-xs tracking-[0.3em] uppercase text-ink-400 mb-3">Bienvenido al blog</p>
         <h1 className="font-display text-5xl md:text-6xl text-ink-900 leading-none mb-4">
@@ -27,7 +27,6 @@ export default async function HomePage() {
         <div className="rule-accent w-16" />
       </div>
 
-      {/* Posts */}
       {posts.length === 0 ? (
         <div className="text-center py-24">
           <p className="font-body text-ink-400 text-sm tracking-wide">Aún no hay publicaciones.</p>

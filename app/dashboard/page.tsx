@@ -1,8 +1,11 @@
 import { connectDB } from '@/lib/mongodb'
 import { Post } from '@/lib/models/Post'
+import { Category } from '@/lib/models/Category'
 import Link from 'next/link'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
+
+export const dynamic = 'force-dynamic'
 
 export default async function DashboardPage() {
   const session = await getServerSession(authOptions)
@@ -41,18 +44,11 @@ export default async function DashboardPage() {
               </div>
               <div className="flex items-center gap-2">
                 {post.published && (
-                  <Link
-                    href={`/post/${post.slug}`}
-                    target="_blank"
-                    className="btn-ghost text-xs"
-                  >
+                  <Link href={`/post/${post.slug}`} target="_blank" className="btn-ghost text-xs">
                     Ver
                   </Link>
                 )}
-                <Link
-                  href={`/dashboard/edit/${post._id.toString()}`}
-                  className="btn-secondary text-xs"
-                >
+                <Link href={`/dashboard/edit/${post._id.toString()}`} className="btn-secondary text-xs">
                   Editar
                 </Link>
               </div>
