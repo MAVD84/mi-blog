@@ -7,7 +7,7 @@ export const revalidate = 60
 
 export default async function CategoriesPage() {
   await connectDB()
-  const categories = await Category.find().sort({ name: 1 }).lean() as Array<{ _id: import("mongoose").Types.ObjectId; name: string; slug: string; description?: string }>
+  const categories = await Category.find().sort({ name: 1 }).lean() as any[]
 
   const counts = await Promise.all(
     categories.map(cat =>
