@@ -1,5 +1,6 @@
 import { connectDB } from '@/lib/mongodb'
 import { Post } from '@/lib/models/Post'
+import { Category } from '@/lib/models/Category'
 import { PostCard } from '@/components/blog/PostCard'
 
 export const revalidate = 60
