@@ -20,7 +20,7 @@ export const authOptions: NextAuthOptions = {
         console.log("USER FOUND:", JSON.stringify(user)); if (!user) return null
 
         const isValid = await bcrypt.compare(credentials.password, user.password)
-        if (!isValid) return null
+        console.log("IS VALID:", isValid); if (!isValid) return null
 
         return {
           id:    user._id.toString(),
